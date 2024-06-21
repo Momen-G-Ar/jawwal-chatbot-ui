@@ -18,8 +18,6 @@ const MainContent = () => {
     const handleSend = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setMessage("");
-        console.log({ message });
         if (message.trim() !== "") {
             setMessages([
                 ...messages,
@@ -28,11 +26,23 @@ const MainContent = () => {
             ]);
             setMessage("");
         }
+        setMessage("");
     };
 
     const handleButtonClick = (e) => {
+        setMessage(e);
+    };
+    const handleInput = (e) => {
         setMessage(e.target.value);
     };
+
+    const scrollRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        }
+    }, [messages]);
 
     return (
         <div
@@ -45,104 +55,98 @@ const MainContent = () => {
             <header></header>
             {!messages.length && (
                 <div className="writing-options">
+                    <img
+                        className="jawwal-icon"
+                        alt="Jawwal Icon"
+                        src="https://www.jawwal.ps/img/no-image.png"
+                    />
                     <h2 className="Title">Frequently Asked Questions</h2>
                     <div className="options-grid">
                         <button
-                            className={activeButton === 0 ? "active" : ""}
+                            className={"FAQ-button"}
                             onClick={() =>
-                                handleButtonClick("Write Social media post ", 0)
+                                handleButtonClick("What is the eSIM service?")
                             }
                         >
-                            <FaFacebook
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Write Social media post
+                            What is the eSIM service?
                         </button>
                         <button
-                            className={activeButton === 1 ? "active" : ""}
+                            className={"FAQ-button"}
                             onClick={() =>
-                                handleButtonClick("Create video script ", 1)
+                                handleButtonClick("How to install an eSIM?")
                             }
                         >
-                            <FaVideo
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Create video script
+                            How to install an eSIM?
                         </button>
                         <button
-                            className={activeButton === 2 ? "active" : ""}
-                            onClick={() =>
-                                handleButtonClick("Write a press release ", 2)
-                            }
-                        >
-                            <FaNewspaper
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Write a press release
-                        </button>
-                        <button
-                            className={activeButton === 3 ? "active" : ""}
-                            onClick={() => handleButtonClick("Health Tips", 3)}
-                        >
-                            <FaHeartbeat
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Health Tips
-                        </button>
-                        <button
-                            className={activeButton === 4 ? "active" : ""}
+                            className={"FAQ-button"}
                             onClick={() =>
                                 handleButtonClick(
-                                    "Design a database schema ",
-                                    4
+                                    "How can I inquire about the package details?"
                                 )
                             }
                         >
-                            <FaDatabase
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Design a database schema
+                            How can I inquire about the package details?
                         </button>
                         <button
-                            className={activeButton === 5 ? "active" : ""}
+                            className={"FAQ-button"}
                             onClick={() =>
-                                handleButtonClick("Write frontend code ", 5)
+                                handleButtonClick(
+                                    "What is the Missed Call Alert service?"
+                                )
                             }
                         >
-                            <FaCode
-                                size={32}
-                                style={{ marginBottom: "10px" }}
-                            />
-                            Write frontend code
+                            What is the Missed Call Alert service?
+                        </button>
+                        <button
+                            className={"FAQ-button"}
+                            onClick={() =>
+                                handleButtonClick(
+                                    "What are the features of the service?"
+                                )
+                            }
+                        >
+                            What are the features of the service?
+                        </button>
+                        <button
+                            className={"FAQ-button"}
+                            onClick={() =>
+                                handleButtonClick(
+                                    "How can I subscribe to the Ranli service?"
+                                )
+                            }
+                        >
+                            How can I subscribe to the Ranli service?
                         </button>
                     </div>
                 </div>
             )}
 
             <div className="message-input-container">
-                {messages.map((msg) => {
-                    console.log(msg);
-                    return (
-                        <>
-                            <ChatMessage
-                                sender={"user"}
-                                theme="light"
-                                text={msg.msg}
-                            />
+                <div
+                    ref={scrollRef}
+                    style={{ overflow: "auto", paddingRight: "10px" }}
+                >
+                    {messages.map((msg, ind) => {
+                        return (
+                            <>
+                                <ChatMessage
+                                    key={ind + "" + Math.random()}
+                                    sender={"user"}
+                                    theme="light"
+                                    text={msg.msg}
+                                />
 
-                            <ChatMessage
-                                sender={"assestant"}
-                                theme="light"
-                                text={msg.msg}
-                            />
-                        </>
-                    );
-                })}
+                                <ChatMessage
+                                    key={ind + "" + Math.random()}
+                                    sender={"assestant"}
+                                    theme="light"
+                                    text={msg.msg}
+                                />
+                            </>
+                        );
+                    })}
+                </div>
                 <div className="message-input">
                     <form
                         style={{ display: "flex", width: "100%" }}
@@ -150,9 +154,9 @@ const MainContent = () => {
                     >
                         <input
                             type="text"
-                            id="1"
                             value={message}
-                            onChange={handleButtonClick}
+                            onChange={handleInput}
+                            placeholder="Write a question"
                         />
                     </form>
                     <VoiceToText setMessage={setMessage} />

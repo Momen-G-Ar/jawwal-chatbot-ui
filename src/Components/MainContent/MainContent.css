@@ -3,6 +3,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 header {
@@ -37,16 +38,12 @@ header {
   /* Center the text */
 }
 
-.options-grid button.active {
-  background-color: #007bff;
-  color: white;
-}
 
 .options-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
+  width: 80%;
   /* Make the grid take full width */
   max-width: 800px;
   /* Set a maximum width for the grid */
@@ -77,12 +74,18 @@ header {
   /* Space between icon and text */
 }
 
+.jawwal-icon {
+  height: 100px;
+  width: 100px;
+}
+
 .message-input-container {
   margin-top: auto;
   /* Push the container to the bottom */
   row-gap: 16px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .message-input {
@@ -153,8 +156,15 @@ header {
 
 .Title {
   color: #6abf4b;
+  font-size: 26px;
 }
 
 .sendbutton {
   background-color: #6abf4b;
+}
+
+.FAQ-button {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
 }
