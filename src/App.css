@@ -3,6 +3,7 @@
   height: 100vh;
   font-family: monospace;
   background-color: var(--body-background);
+  transition: ease 0.3s;
 }
 
 input[type=text] {

@@ -1,11 +1,13 @@
 // import SearchBar from "./search-bar";
 import { RiChatNewLine } from "react-icons/ri";
 import { BsList } from "react-icons/bs";
-import { TbProgressHelp } from "react-icons/tb";
 import { MdChatBubbleOutline } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./search-bar/search-bar";
+import ThemeFlipper from "./theme-flipper/theme-flipper";
+import { MdLightMode } from "react-icons/md";
+import { MdNightlight } from "react-icons/md";
 import "./themed-side-bar.css";
 import ChatGroup from "../ChatGroup/ChatGroup";
 

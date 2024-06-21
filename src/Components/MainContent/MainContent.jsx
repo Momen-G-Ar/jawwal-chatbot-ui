@@ -134,7 +134,6 @@ const MainContent = () => {
                                 <ChatMessage
                                     key={ind + "" + Math.random()}
                                     sender={"user"}
-                                    theme="light"
                                     text={msg.msg}
                                 />
 
