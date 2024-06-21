@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+.uael-main-btn {
+  font-size: 20px;
+}
+
+.uael-main-btn .uael-toggle {
+  display: block;
+  position: relative;
+  background: 0 0;
+  width: 2em;
+  height: 1.3rem;
+}
+
+.uael-main-btn .uael-toggle .uael-switch-round-2 {
+  visibility: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0;
+  display: none;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox'] + label {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0em;
+  padding-left: 0;
+  color: #000;
+  cursor: pointer;
+  width: 2em;
+  height: 1em;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox'] + label:before {
+  transition: background-color 0.4s ease;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0em;
+  left: 0;
+  content: '';
+  width: 2em;
+  height: 1em;
+  background-color: #767688;
+  border-radius: 5em;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox'] + label:before {
+  background-color: #46d981;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox']:checked + label:before {
+  background-color: #000000;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox']:checked + label:after {
+  transform: translateX(1.3em);
+  border: 0.2em solid #000000;
+  background: url('data:image/svg+xml;utf8,<svg width="11" height="11" viewBox="0 0 11 11" class="iconmoon" preserveAspectRatio="xMidYMid meet"><path d="M5.62 11A5.62 5.62 0 013.988 0 5.62 5.62 0 0011 7.012 5.623 5.623 0 015.62 11z" fill="#17191D" fill-rule="evenodd"></path></svg>');
+  background-color: #fff;
+}
+
+.uael-main-btn .uael-toggle input[type='checkbox'] + label:after {
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0em;
+  width: 1.3em;
+  height: 1.3em;
+  content: '';
+  font-size: 0.75em;
+  border-radius: 50em;
+  border: 0.2em solid #767676;
+}
+
+.uael-main-btn .uael-toggle input[type="checkbox"] + label:after {
+  border: 0.2em solid #46D981;
+  background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" class="iconsun" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect fill="#17191D" x="5" y="5" width="6" height="6" rx="3"></rect><path d="M8 2V0m0 16v-2m6-6h2M0 8h2m10.243 4.243l1.414 1.414M2.343 2.343l1.414 1.414m0 8.486l-1.414 1.414M13.657 2.343l-1.414 1.414" stroke="#17191D" stroke-width="2"></path></g></svg>');
+  background-color: #fff;
+}

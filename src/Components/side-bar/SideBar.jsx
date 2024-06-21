@@ -1,16 +1,18 @@
 // import SearchBar from "./search-bar";
 import { RiChatNewLine } from "react-icons/ri";
 import { BsList } from "react-icons/bs";
-import { TbProgressHelp } from "react-icons/tb";
 import { MdChatBubbleOutline } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./search-bar/search-bar";
+import ThemeFlipper from "./theme-flipper/theme-flipper";
+import { MdLightMode } from "react-icons/md";
+import { MdNightlight } from "react-icons/md";
 import "./themed-side-bar.css";
 
 const SideBar2 = (props) => {
   const [displaySideBar, setDisplaySidebar] = useState(true);
-  const theme = props.theme;
+  const { theme, setTheme } = props;
   // cosnt dummyHistory = {
   //   Today: [
 
@@ -23,8 +25,10 @@ const SideBar2 = (props) => {
   //   ]
   // }
 
+  // eslint-disable-next-line
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {}, [searchTerm]);
+  console.log("theme in side bar: ", theme);
 
   return (
     <div
@@ -32,14 +36,24 @@ const SideBar2 = (props) => {
       style={!displaySideBar ? { background: "none" } : {}}
     >
       <div className="sideHeader ">
-        <BsList
-          size={25}
-          onClick={() => setDisplaySidebar(!displaySideBar)}
-          className="cursor-pointer"
-        />
+        <div
+          className="theme-selection"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          <span className=""></span>
+          {theme === "dark" ? (
+            <MdNightlight size={21} />
+          ) : (
+            <MdLightMode size={23} />
+          )}
+        </div>
         <div className="icons">
-          <TbProgressHelp size={22} />
           <RiChatNewLine size={22} />
+          <BsList
+            size={25}
+            onClick={() => setDisplaySidebar(!displaySideBar)}
+            className="cursor-pointer"
+          />
         </div>
       </div>
       <div className="side-bar ">

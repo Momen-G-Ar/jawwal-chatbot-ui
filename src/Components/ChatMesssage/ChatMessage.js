@@ -8,7 +8,7 @@ const ChatMessage = (props) => {
       style={{
         flexDirection: props.sender === "assestant" ? "row" : "row-reverse",
       }}
-      className={`chat-message-container ${props.theme}`}
+      className={`chat-message-container `}
     >
       <div className="chat-message-image-container">
         <div

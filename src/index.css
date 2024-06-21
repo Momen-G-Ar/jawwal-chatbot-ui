@@ -24,13 +24,13 @@ code {
   --bot-text-chat-color: white;
   --background-color: rgba(255, 255, 255, 0.2);
   --search-background: #21212176;
-  --group-devider-border: #ccc;
+  --group-devider-border: #aaa;
   --body-background: #212121;
 }
 
 .light {
   --background-color: #f0f0f0;
-  --primary-text-color: #aaa;
+  --primary-text-color: #999;
   /* --primary-text-color: #ffffff; */
   --primary-emoji-color: #555454;
   --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -41,6 +41,6 @@ code {
   --user-text-chat-color: white;
   --bot-text-chat-color: black;
   --search-background: white;
-  --group-devider-border: #333;
+  --group-devider-border: #888;
   --body-background: #fff;
 }
