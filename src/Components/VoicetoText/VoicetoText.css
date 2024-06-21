@@ -1,12 +1,10 @@
 .microphone-button {
   border: none;
-  background-color: white;
   cursor: pointer;
-  padding: 0;
+  padding: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -40px;
 }
 
 .microphone-button.recording {

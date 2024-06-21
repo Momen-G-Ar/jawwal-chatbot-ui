@@ -112,7 +112,7 @@ header {
 }
 
 .message-input button {
-  padding: 10px 20px;
+  margin: 10px 20px;
   border-radius: 20px;
   /* Rounded corners */
   border: none;

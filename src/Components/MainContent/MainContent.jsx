@@ -19,7 +19,7 @@ const MainContent = () => {
         e.preventDefault();
         e.stopPropagation();
         setMessage("");
-        console.log(message);
+        console.log({ message });
         if (message.trim() !== "") {
             setMessages([
                 ...messages,
