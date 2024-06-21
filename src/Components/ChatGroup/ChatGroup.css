@@ -1,0 +1,47 @@
+.record {
+    display: flex;
+    /* flex */
+    flex-direction: column;
+    /* flex-col */
+    gap: 0.75rem;
+    /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+    padding-bottom: 1.25rem;
+    /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+}
+
+.group {
+    display: flex;
+    /* flex */
+    color: var(var(--user-message-chat-color));
+    justify-content: space-between;
+    /* justify-between */
+    padding-right: 1.25rem;
+    /* pr-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+    /* margin-right: 1.5rem; */
+}
+
+.group-name {
+    /* border-bottom: 1px solid #ddd; */
+    padding-bottom: 0.25rem;
+    width: 100%;
+    user-select: none;
+    /*font-size: 1rem; /* Assuming 1rem for text-md (medium text size in Tailwind) */
+    /* You can adjust the font-size value based on your specific design requirements */
+}
+
+.group-name {
+    border-bottom: 1px solid var(--group-devider-border);
+}
+
+.chat-title {
+    display: flex;
+    /* flex */
+    flex-direction: row;
+    /* flex-row */
+    justify-content: flex-start;
+    /* justify-start */
+    gap: 0.75rem;
+    /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+    align-items: center;
+    /* items-center */
+}

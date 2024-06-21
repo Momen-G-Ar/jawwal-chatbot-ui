@@ -13,8 +13,8 @@
 
 .chat-message-image {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background-size: cover;
   /* Ensures the entire image is visible */

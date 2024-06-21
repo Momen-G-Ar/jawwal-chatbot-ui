@@ -1,14 +1,22 @@
 .light.side-bar {
   /* flex flex-col col-span-1 justify-start m-3 items-start text-myGray shadow-right-lg pr-3 */
-  display: flex; /* flex */
-  flex-direction: column; /* flex-col */
-  flex: 1 1 0%; /* col-span-1 (assuming it's used in a flex container for layout) */
-  justify-content: flex-start; /* justify-start */
-  margin: 0.75rem; /* m-3 */
-  align-items: flex-start; /* items-start */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
+  flex: 1 1 0%;
+  /* col-span-1 (assuming it's used in a flex container for layout) */
+  justify-content: flex-start;
+  /* justify-start */
+  margin: 0.75rem;
+  /* m-3 */
+  align-items: flex-start;
+  /* items-start */
   box-shadow: 10px 0 15px -3px var(--emoji-shadow),
-    4px 0 6px -2px rgba(0, 0, 0, 0.05); /* shadow-right-lg */
-  padding-right: 0.75rem; /* pr-3 */
+    4px 0 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-right-lg */
+  padding-right: 0.75rem;
+  /* pr-3 */
   max-width: 20vw;
 }
 
@@ -18,19 +26,27 @@
   padding-right: 1rem;
   color: #ccc;
 }
+
 .sidebar-container.light {
   width: 20vw;
   background-color: var(--background-color);
   padding-right: 1rem;
   color: #333;
 }
+
 .sideHeader {
-  padding-left: 0.75rem; /* pr-3 */
-  padding-top: 0.5rem; /* pr-3 */
-  width: 100%; /* w-full */
-  height: 2.5rem; /* h-10 (2.5rem is equivalent to 10 * 0.25rem) */
-  display: flex; /* flex */
-  justify-content: space-between; /* justify-between */
+  padding-left: 0.75rem;
+  /* pr-3 */
+  padding-top: 0.5rem;
+  /* pr-3 */
+  width: 100%;
+  /* w-full */
+  height: 2.5rem;
+  /* h-10 (2.5rem is equivalent to 10 * 0.25rem) */
+  display: flex;
+  /* flex */
+  justify-content: space-between;
+  /* justify-between */
   width: 98%;
   margin-bottom: 1rem;
   margin-left: 0.125rem;
@@ -39,42 +55,63 @@
 }
 
 .icons {
-  display: flex; /* flex */
-  flex-direction: row; /* flex-row */
-  column-gap: 0.5rem; /* gap-x-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
-  justify-content: space-between; /* justify-between */
+  display: flex;
+  /* flex */
+  flex-direction: row;
+  /* flex-row */
+  column-gap: 0.5rem;
+  /* gap-x-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
+  justify-content: space-between;
+  /* justify-between */
 }
 
 .history {
-  display: flex; /* flex */
-  flex-direction: column; /* flex-col */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
   /*font-size: 1rem; /* text-lg (assuming 1.125rem for text-lg size) */
-  padding-top: 0.5rem; /* pt-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
-  padding-left: 0.75rem; /* pl-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  margin: 0.75rem; /* m-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  overflow-y: scroll; /* overflow-y-scroll */
+  padding-top: 0.5rem;
+  /* pt-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
+  padding-left: 0.75rem;
+  /* pl-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+  margin: 0.75rem;
+  /* m-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+  overflow-y: scroll;
+  /* overflow-y-scroll */
   max-height: 85vh;
-  scrollbar-width: none; /* hide-scrollbar */
-  -ms-overflow-style: none; /* hide-scrollbar (for IE and Edge) */
-  width: 100%; /* w-full */
+  scrollbar-width: none;
+  /* hide-scrollbar */
+  -ms-overflow-style: none;
+  /* hide-scrollbar (for IE and Edge) */
+  width: 100%;
+  /* w-full */
 }
 
 .history::-webkit-scrollbar {
-  display: none; /* hide-scrollbar (for Chrome, Safari, and Opera) */
+  display: none;
+  /* hide-scrollbar (for Chrome, Safari, and Opera) */
 }
 
 .record {
-  display: flex; /* flex */
-  flex-direction: column; /* flex-col */
-  gap: 0.75rem; /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  padding-bottom: 1.25rem; /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+  display: flex;
+  /* flex */
+  flex-direction: column;
+  /* flex-col */
+  gap: 0.75rem;
+  /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+  padding-bottom: 1.25rem;
+  /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
 }
 
 .group {
-  display: flex; /* flex */
+  display: flex;
+  /* flex */
   color: var(var(--user-message-chat-color));
-  justify-content: space-between; /* justify-between */
-  padding-right: 1.25rem; /* pr-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+  justify-content: space-between;
+  /* justify-between */
+  padding-right: 1.25rem;
+  /* pr-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
   /* margin-right: 1.5rem; */
 }
 
@@ -91,9 +128,95 @@
 }
 
 .chat-title {
-  display: flex; /* flex */
-  flex-direction: row; /* flex-row */
-  justify-content: flex-start; /* justify-start */
-  gap: 0.75rem; /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  align-items: center; /* items-center */
+  display: flex;
+  /* flex */
+  flex-direction: row;
+  /* flex-row */
+  justify-content: flex-start;
+  /* justify-start */
+  gap: 0.75rem;
+  /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
+  align-items: center;
+  /* items-center */
+}
+
+/* You can add global styles to this file, and also import other style files */
+.uael-main-btn {
+  font-size: 20px;
+
+  .uael-toggle {
+    display: block;
+    position: relative;
+    background: 0 0;
+    width: 2em;
+    height: 1.3rem;
+
+    .uael-switch-round-2 {
+      visibility: hidden;
+      margin: 0 !important;
+      padding: 0 !important;
+      opacity: 0;
+      display: none;
+    }
+
+    input[type='checkbox']+label {
+      position: relative;
+      display: inline-block;
+      top: 0;
+      left: 0em;
+      padding-left: 0;
+      color: #000;
+      cursor: pointer;
+      width: 2em;
+      height: 1em;
+    }
+
+    input[type='checkbox']+label:before {
+      transition: background-color 0.4s ease;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0em;
+      left: 0;
+      content: '';
+      width: 2em;
+      height: 1em;
+      background-color: #767688;
+      border-radius: 5em;
+    }
+
+    input[type='checkbox']+label:before {
+      background-color: #46d981;
+    }
+
+    input[type='checkbox']:checked+label:before {
+      background-color: #000000;
+    }
+
+    input[type='checkbox']:checked+label:after {
+      transform: translateX(1.3em);
+      border: 0.2em solid #000000;
+      background: url('data:image/svg+xml;utf8,<svg width="11" height="11" viewBox="0 0 11 11" class="iconmoon" preserveAspectRatio="xMidYMid meet"><path d="M5.62 11A5.62 5.62 0 013.988 0 5.62 5.62 0 0011 7.012 5.623 5.623 0 015.62 11z" fill="#17191D" fill-rule="evenodd"></path></svg>');
+      background-color: #fff;
+    }
+
+    input[type='checkbox']+label:after {
+      box-sizing: border-box;
+      transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+      position: absolute;
+      top: 0;
+      left: 0em;
+      width: 1.3em;
+      height: 1.3em;
+      content: '';
+      font-size: 0.75em;
+      border-radius: 50em;
+      border: 0.2em solid #767676;
+    }
+
+    input[type="checkbox"]+label:after {
+      border: 0.2em solid #46D981;
+      background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" class="iconsun" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect fill="#17191D" x="5" y="5" width="6" height="6" rx="3"></rect><path d="M8 2V0m0 16v-2m6-6h2M0 8h2m10.243 4.243l1.414 1.414M2.343 2.343l1.414 1.414m0 8.486l-1.414 1.414M13.657 2.343l-1.414 1.414" stroke="#17191D" stroke-width="2"></path></g></svg>');
+      background-color: #fff;
+    }
+  }
 }

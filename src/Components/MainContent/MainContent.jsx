@@ -10,6 +10,8 @@ import {
 import "./MainContent.css";
 import VoiceToText from "../VoicetoText/VoicetoText";
 import ChatMessage from "../ChatMesssage/ChatMessage";
+import axios from "axios";
+
 const MainContent = () => {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
@@ -44,14 +46,12 @@ const MainContent = () => {
         }
     }, [messages]);
 
+    const getChat = async () => {
+        const response = await axios.get();
+    };
+
     return (
-        <div
-            className="main-content"
-            style={{
-                backgroundImage:
-                    "url('../../../public/imga/JawwalBackground.png')",
-            }}
-        >
+        <div className="main-content">
             <header></header>
             {!messages.length && (
                 <div className="writing-options">
@@ -124,6 +124,7 @@ const MainContent = () => {
 
             <div className="message-input-container">
                 <div
+                    className="chat-container"
                     ref={scrollRef}
                     style={{ overflow: "auto", paddingRight: "10px" }}
                 >
@@ -139,7 +140,7 @@ const MainContent = () => {
 
                                 <ChatMessage
                                     key={ind + "" + Math.random()}
-                                    sender={"assestant"}
+                                    sender={"assistant"}
                                     theme="light"
                                     text={msg.msg}
                                 />

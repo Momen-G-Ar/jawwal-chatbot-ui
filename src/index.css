@@ -6,17 +6,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #212121;
+
 }
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  /* Light gray background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  /* Slightly darker gray */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+  /* Darker gray on hover */
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .dark {
   --primary-text-color: #ffffff;
   --primary-emoji-color: #ffffff;
   --emoji-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
   /* Lighter shadow for dark mode */
+  --main-content-background: #212121;
 
   --bot-background-chat-color: rgb(121, 121, 121);
   --user-background-chat-color: #357a38;
@@ -35,6 +62,7 @@ code {
   --primary-emoji-color: #555454;
   --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   /* Darker shadow for light mode */
+  --main-content-background: white;
 
   --bot-background-chat-color: white;
   --user-background-chat-color: #6abf4b;
