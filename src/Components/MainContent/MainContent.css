@@ -1,0 +1,128 @@
+.main-content {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.llm-options {
+  padding: 10px;
+  border-radius: 20px; /* Rounded corners */
+  background-color: #f0f0f0; /* Gray background */
+  border: 1px solid #ccc; /* Border */
+  cursor: pointer;
+}
+
+.writing-options {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.writing-options h2 {
+  text-align: center; /* Center the text */
+}
+
+.options-grid button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%; /* Make the grid take full width */
+  max-width: 800px; /* Set a maximum width for the grid */
+  margin-top: 20px;
+}
+
+.options-grid button {
+  padding: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: #6abf4b; /* Gray background */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 20px; /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Increased height */
+  text-align: center;
+}
+
+.options-grid button img {
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.message-input-container {
+  margin-top: auto; /* Push the container to the bottom */
+  row-gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-input {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  height: 20px; /* Increased height */
+  border-radius: 20px; /* Rounded corners */
+  border: 1px solid #ccc;
+  margin-right: 10px; /* Margin between input and button */
+  background-color: #f0f0f0; /* Gray background */
+  justify-content: space-between;
+}
+
+.message-input input {
+}
+
+.message-input button {
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners */
+  border: none;
+  cursor: pointer;
+}
+
+.sent {
+  justify-content: flex-end; /* Align items to the right */
+  margin-left: auto; /* Align the bubble to the right */
+}
+
+.received {
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.message-bubble img {
+  border-radius: 50%;
+}
+
+.message-bubble.sent img {
+  margin-left: 10px;
+}
+
+.message-bubble.received img {
+  margin-right: 10px;
+}
+
+.message-bubble p {
+  margin: 0;
+  max-width: 200px; /* Limit the width of the text */
+  word-wrap: break-word; /* Wrap long words */
+}
+.Title {
+  color: #6abf4b;
+}
+.sendbutton {
+  background-color: #6abf4b;
+}

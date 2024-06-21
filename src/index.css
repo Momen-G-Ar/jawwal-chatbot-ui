@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.dark {
+  --primary-emoji-color: #ffffff;
+  --emoji-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+  /* Lighter shadow for dark mode */
+
+  --bot-background-chat-color: rgb(121, 121, 121);
+  --user-background-chat-color: #357a38;
+  --user-text-chat-color: white;
+  --bot-text-chat-color: white;
+}
+
+.light {
+  --primary-text-color: #ffffff;
+  --primary-emoji-color: #555454;
+  --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Darker shadow for light mode */
+
+  --bot-background-chat-color: white;
+  --user-background-chat-color: #6abf4b;
+  --user-text-chat-color: white;
+  --bot-text-chat-color: black;
+}
