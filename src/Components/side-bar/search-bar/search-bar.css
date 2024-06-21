@@ -1,0 +1,54 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700"); */
+
+.search > div {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  /* filter: drop-shadow(0 1px var(--user-message-chat-color)); */
+}
+
+.search > div > input {
+  color: var(--user-message-chat-color);
+  font-size: 16px;
+  background: white;
+  /* width: 0.75rem; */
+  height: 0.75rem;
+  padding: 10px;
+  border: solid 1px var(--user-message-chat-color);
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+  width: 85%;
+}
+
+.search > div > input::placeholder {
+  color: #999;
+  /* opacity: 0; */
+  font-family: monospace;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+
+.dark {
+  --primary-text-color: #ffffff;
+  --user-message-chat-color: #357a38;
+  --primary-emoji-color: #ffffff;
+  --primary-emoji-color: #000;
+  --emoji-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+  /* Lighter shadow for dark mode */
+}
+
+.light {
+  --background-color: #f0f0f0;
+  --primary-text-color: #aaa;
+  --user-message-chat-color: #6abf4b;
+  --primary-emoji-color: #000000;
+  --primary-background-color: #fff;
+  --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Darker shadow for light mode */
+}
