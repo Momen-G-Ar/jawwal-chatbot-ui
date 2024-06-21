@@ -3,3 +3,17 @@
   height: 100vh;
   font-family: monospace;
 }
+
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-color: transparent;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+
+}
