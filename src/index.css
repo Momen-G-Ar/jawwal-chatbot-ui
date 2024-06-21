@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #212121; */
+  background-color: #212121;
 }
 
 code {
@@ -13,6 +13,7 @@ code {
     monospace;
 }
 .dark {
+  --primary-text-color: #ffffff;
   --primary-emoji-color: #ffffff;
   --emoji-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
   /* Lighter shadow for dark mode */
@@ -21,10 +22,16 @@ code {
   --user-background-chat-color: #357a38;
   --user-text-chat-color: white;
   --bot-text-chat-color: white;
+  --background-color: rgba(255, 255, 255, 0.2);
+  --search-background: #21212176;
+  --group-devider-border: #ccc;
+  --body-background: #212121;
 }
 
 .light {
-  --primary-text-color: #ffffff;
+  --background-color: #f0f0f0;
+  --primary-text-color: #aaa;
+  /* --primary-text-color: #ffffff; */
   --primary-emoji-color: #555454;
   --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   /* Darker shadow for light mode */
@@ -33,4 +40,7 @@ code {
   --user-background-chat-color: #6abf4b;
   --user-text-chat-color: white;
   --bot-text-chat-color: black;
+  --search-background: white;
+  --group-devider-border: #333;
+  --body-background: #fff;
 }

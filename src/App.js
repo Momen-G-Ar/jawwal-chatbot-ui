@@ -5,8 +5,8 @@ import MainContent from "./Components/MainContent/MainContent";
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar2 theme="light" />
+    <div className="App dark">
+      <Sidebar2 theme='dark' />
       <MainContent />
     </div>
   );

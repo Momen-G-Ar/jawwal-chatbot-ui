@@ -26,13 +26,16 @@
 }
 .sideHeader {
   padding-left: 0.75rem; /* pr-3 */
-  padding-top: 0.75rem; /* pr-3 */
+  padding-top: 0.5rem; /* pr-3 */
   width: 100%; /* w-full */
   height: 2.5rem; /* h-10 (2.5rem is equivalent to 10 * 0.25rem) */
   display: flex; /* flex */
   justify-content: space-between; /* justify-between */
   width: 98%;
   margin-bottom: 1rem;
+  margin-left: 0.125rem;
+  border-bottom: 2px solid var(--group-devider-border);
+  /* box-shadow: 0 4px 6px -1px var(--user-message-chat-color), 0 2px 4px -1px var(--user-message-chat-color); */
 }
 
 .icons {
@@ -83,12 +86,8 @@
   /* You can adjust the font-size value based on your specific design requirements */
 }
 
-.light .group-name {
-  border-bottom: 1px solid var(--user-message-chat-color);
-}
-
-.dark .group-name {
-  border-bottom: 1px solid var(--user-message-chat-color);
+.group-name {
+  border-bottom: 1px solid var(--group-devider-border);
 }
 
 .chat-title {
@@ -97,24 +96,4 @@
   justify-content: flex-start; /* justify-start */
   gap: 0.75rem; /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   align-items: center; /* items-center */
-}
-
-.dark {
-  --primary-text-color: #ffffff;
-  --user-message-chat-color: #357a38;
-  --primary-emoji-color: #ffffff;
-  --primary-emoji-color: #000;
-  --emoji-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
-  --background-color: rgb(22 121 35 / 19%);  
-  /* Lighter shadow for dark mode */
-}
-
-.light {
-  --background-color: #f0f0f0;
-  --primary-text-color: #aaa;
-  --user-message-chat-color: #6abf4b;
-  --primary-emoji-color: #000000;
-  --primary-background-color: #fff;
-  --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  /* Darker shadow for light mode */
 }
