@@ -7,6 +7,9 @@ function App() {
     const [darkTheme, setDarkTheme] = React.useState(false);
     const [messages, setMessages] = React.useState([]);
     const [displaySideBar, setDisplaySidebar] = React.useState(true);
+    const [smallScreen, setSmallScreen] = React.useState(false);
+    const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
+        React.useState(false);
 
     const handleNewChat = () => {
         setMessages([]);
@@ -21,6 +24,10 @@ function App() {
                     setDarkTheme={setDarkTheme}
                     displaySideBar={displaySideBar}
                     setDisplaySidebar={setDisplaySidebar}
+                    smallScreen={smallScreen}
+                    setSmallScreen={setSmallScreen}
+                    displaySideBarForSmallScreen={displaySideBarForSmallScreen}
+                    setDisplaySideBarForSmallScreen={setDisplaySideBarForSmallScreen}
                 />
             )}
             <MainContent

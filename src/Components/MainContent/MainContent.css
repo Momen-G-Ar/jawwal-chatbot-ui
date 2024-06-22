@@ -1,9 +1,11 @@
 .main-content {
-  width: 80%;
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: var(--main-content-background);
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 header {
@@ -38,7 +40,6 @@ header {
   /* Center the text */
 }
 
-
 .options-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -48,6 +49,27 @@ header {
   max-width: 800px;
   /* Set a maximum width for the grid */
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .options-grid button.FAQ-button {
+    height: fit-content;
+  }
+  .main-content {
+    overflow: scroll;
+    max-height: fit-content;
+    overflow-y: scroll;
+  }
+  .main-content.show {
+    filter: blur(3);
+  }
+  .main-content.hide {
+    filter: none;
+  }
 }
 
 .options-grid button {
@@ -86,7 +108,13 @@ header {
   display: flex;
   flex-direction: column;
   overflow: auto;
+  position: sticky;
 }
+/* @media (max-width: 768px) {
+  .message-input-container {
+    position: relative;
+  }
+} */
 
 .message-input {
   display: flex;
@@ -116,7 +144,6 @@ header {
   flex-direction: column;
 }
 
-
 .message-input input {
   border-radius: 20px;
   display: flex;
@@ -125,7 +152,7 @@ header {
   width: 50%;
   overflow: auto;
   color: var(--input-text-color);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .message-input button {
@@ -180,5 +207,5 @@ header {
 .FAQ-button {
   font-size: 20px;
   font-weight: 500;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }

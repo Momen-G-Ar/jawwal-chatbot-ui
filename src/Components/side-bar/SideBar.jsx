@@ -11,13 +11,15 @@ const SideBar2 = ({
   handleNewChat,
   displaySideBar,
   setDisplaySidebar,
+  smallScreen,
+  setSmallScreen,
+  displaySideBarForSmallScreen,
+  setDisplaySideBarForSmallScreen,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [smallScreen, setSmallScreen] = useState(false);
-  const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
-    useState(false);
-  useState(false);
-  useState(false);
+  // const [smallScreen, setSmallScreen] = useState(false);
+  // const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
+  //   useState(false);
   useEffect(() => {}, [searchTerm]);
   const onChange = (e) => {
     setSearchTerm(e.target.value);
@@ -75,7 +77,7 @@ const SideBar2 = ({
               ? setDisplaySideBarForSmallScreen(!displaySideBarForSmallScreen)
               : setDisplaySidebar(!displaySideBar);
           }}
-          style={{ cursor: "pointer", minWidth: "40px" }}
+          style={{ cursor: "pointer", minWidth: "40px", zIndex: 2 }}
         />
         <div className="icons">
           <div className="uael-main-btn" data-switch-type="round_2">
