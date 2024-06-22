@@ -8,7 +8,9 @@ function App() {
     const [messages, setMessages] = React.useState([]);
     const [displaySideBar, setDisplaySidebar] = React.useState(true);
 
-    const handleNewChat = () => {};
+    const handleNewChat = () => {
+        setMessages([]);
+    };
 
     return (
         <div className={`App ${darkTheme ? "dark" : "light"}`}>

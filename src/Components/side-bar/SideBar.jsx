@@ -49,7 +49,11 @@ const SideBar2 = ({
                             ></label>
                         </div>
                     </div>
-                    <RiChatNewLine size={22} onClick={handleNewChat} />
+                    <RiChatNewLine
+                        size={22}
+                        style={{ cursor: "pointer" }}
+                        onClick={handleNewChat}
+                    />
                 </div>
             </div>
             <div className="side-bar">
