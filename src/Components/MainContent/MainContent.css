@@ -44,7 +44,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 80%;
+  width: 70%;
   /* Make the grid take full width */
   max-width: 800px;
   /* Set a maximum width for the grid */
@@ -147,7 +147,9 @@ header {
   width: 50%;
   overflow: auto;
   color: var(--input-text-color);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Inter", sans-serif;
+  transition: opacity 150ms ease-out;
+  font-size: 16px;
 }
 
 .message-input button {
@@ -202,5 +204,6 @@ header {
 .FAQ-button {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Inter", sans-serif;
 }
+

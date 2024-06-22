@@ -1,5 +1,5 @@
 const CONSTANTS = {
-    baseURL: "http://192.168.1.157:3030",
+    baseURL: "http://172.20.10.2:3030",
 
     pdfMap: {
         Esim: "https://drive.google.com/file/d/1eUY8ODJvwYfQ3MlcM6K6W903YVGrEWVo/view",

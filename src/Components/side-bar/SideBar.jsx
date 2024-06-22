@@ -6,6 +6,10 @@ import "./themed-side-bar.css";
 import ChatGroup from "../ChatGroup/ChatGroup";
 
 const SideBar2 = ({
+  setSearchTerm,
+  searchTerm,
+  groups,
+  handleChangeChatMessages,
   theme,
   setDarkTheme,
   handleNewChat,
@@ -16,15 +20,9 @@ const SideBar2 = ({
   displaySideBarForSmallScreen,
   setDisplaySideBarForSmallScreen,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  // const [smallScreen, setSmallScreen] = useState(false);
-  // const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
-  //   useState(false);
-  useEffect(() => {}, [searchTerm]);
   const onChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
   useEffect(() => {
     const handleResize = () => {
       setSmallScreen(window.innerWidth < 768);
@@ -69,8 +67,7 @@ const SideBar2 = ({
         <BsList
           className=""
           size={25}
-          color="999"
-          // style= {{minWidth: '50px'}}
+          //   style= {{minWidth: '50px',}}
           onClick={(e) => {
             e.stopPropagation();
             console.log("small screen: ", smallScreen);
@@ -78,7 +75,12 @@ const SideBar2 = ({
               ? setDisplaySideBarForSmallScreen(!displaySideBarForSmallScreen)
               : setDisplaySidebar(!displaySideBar);
           }}
-          style={{ cursor: "pointer", minWidth: "40px", zIndex: 2 }}
+          style={{
+            cursor: "pointer",
+            color: "var(--primary-emoji-color)",
+            minWidth: "40px",
+            zIndex: 2,
+          }}
         />
         <div className="icons">
           <div className="uael-main-btn" data-switch-type="round_2">
