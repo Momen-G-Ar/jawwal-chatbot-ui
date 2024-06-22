@@ -33,8 +33,7 @@
   /* flex */
   justify-content: space-between;
   /* justify-between */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--group-devider-border);
+  margin-bottom: 0.4rem;
   /* box-shadow: 0 4px 6px -1px var(--user-message-chat-color), 0 2px 4px -1px var(--user-message-chat-color); */
 }
 

@@ -7,6 +7,13 @@
     /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
     padding-bottom: 1.25rem;
     /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+    background-color: #6abf4b;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    padding-top: 0.75rem;
+    color: var(--user-text-chat-color);
 }
 
 .group {
