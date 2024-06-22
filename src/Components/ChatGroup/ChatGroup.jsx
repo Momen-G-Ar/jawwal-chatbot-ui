@@ -32,7 +32,7 @@ const ChatGroup = ({
             </div>
             {showContent && (
                 <>
-                    {items.map((item) => {
+                    {(items || []).map((item) => {
                         const title = trimString(item.title, 32);
                         return (
                             <div
