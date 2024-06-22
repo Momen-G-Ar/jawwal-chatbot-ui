@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: var(--main-content-background);
   max-height: 100vh;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 header {
@@ -58,11 +58,6 @@ header {
   }
   .options-grid button.FAQ-button {
     height: fit-content;
-  }
-  .main-content {
-    overflow: scroll;
-    max-height: fit-content;
-    overflow-y: scroll;
   }
   .main-content.show {
     filter: blur(3);

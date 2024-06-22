@@ -34,7 +34,7 @@
   justify-content: space-between;
   /* justify-between */
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--group-devider-border);
+  /* border-bottom: 2px solid var(--group-devider-border); */
   /* box-shadow: 0 4px 6px -1px var(--user-message-chat-color), 0 2px 4px -1px var(--user-message-chat-color); */
 }
 
@@ -128,7 +128,7 @@
   padding-top: 0.5rem;
   /* pt-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
   /* pl-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  margin: 0.75rem;
+  margin: 0.5rem;
   /* m-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   overflow-y: scroll;
   /* overflow-y-scroll */
@@ -155,6 +155,13 @@
   /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   padding-bottom: 1.25rem;
   /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
+  background-color: #6abf4b;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  padding-top: 0.75rem;
+  color: var(--user-text-chat-color);
 }
 
 .group {

@@ -69,6 +69,7 @@ const SideBar2 = ({
         <BsList
           className=""
           size={25}
+          color="999"
           // style= {{minWidth: '50px'}}
           onClick={(e) => {
             e.stopPropagation();
@@ -85,16 +86,22 @@ const SideBar2 = ({
               <input
                 className="uael-switch-round-2 elementor-clickable"
                 type="checkbox"
-                id="toggle_2"
-                onClick={(e) => {
+                value={theme === "light"}
+                onChange={(e) => {
                   e.stopPropagation();
                   setDarkTheme((old) => !old);
                 }}
+                id="toggle_2"
+                // onClick={(e) => {
+                //   e.stopPropagation();
+                //   setDarkTheme((old) => !old);
+                // }}
               />
               <label for="toggle_2" className="elementor-clickable"></label>
             </div>
           </div>
           <RiChatNewLine
+            color="999"
             size={22}
             style={{ cursor: "pointer" }}
             onClick={handleNewChat}
