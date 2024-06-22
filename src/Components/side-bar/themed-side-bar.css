@@ -1,47 +1,31 @@
-.light.side-bar {
+.side-bar {
   /* flex flex-col col-span-1 justify-start m-3 items-start text-myGray shadow-right-lg pr-3 */
   display: flex;
   /* flex */
   flex-direction: column;
   /* flex-col */
-  flex: 1 1 0%;
   /* col-span-1 (assuming it's used in a flex container for layout) */
   justify-content: flex-start;
   /* justify-start */
   margin: 0.75rem;
+  width: 90%;
   /* m-3 */
-  align-items: flex-start;
   /* items-start */
-  box-shadow: 10px 0 15px -3px var(--emoji-shadow),
-    4px 0 6px -2px rgba(0, 0, 0, 0.05);
   /* shadow-right-lg */
-  padding-right: 0.75rem;
   /* pr-3 */
-  max-width: 20vw;
-}
-
-.sidebar-container {
-  width: 20vw;
-  background-color: var(--background-color);
-  padding-right: 1rem;
   color: var(--primary-text-color);
-  /* border-right: 1px solid var(--group-devider-border); */
-  box-shadow: 3px 0 5px -2px var(--group-devider-border);
 }
 
-.sidebar-container.light {
-  width: 20vw;
-  background-color: var(--background-color);
-  padding-right: 1rem;
-  color: #333;
-}
+
+
 
 .sideHeader {
-  padding-left: 0.75rem;
   /* pr-3 */
   padding-top: 0.5rem;
+  padding-left: 2px;
+  padding-right: 2px;
   /* pr-3 */
-  width: 100%;
+  width: 93%;
   /* w-full */
   height: 2.5rem;
   /* h-10 (2.5rem is equivalent to 10 * 0.25rem) */
@@ -49,11 +33,9 @@
   /* flex */
   justify-content: space-between;
   /* justify-between */
-  width: 98%;
   margin-bottom: 1rem;
-  margin-left: 0.125rem;
   border-bottom: 2px solid var(--group-devider-border);
-  /* box-shadow: 0 4px 6px -1px var(--user-text-chat-color), 0 2px 4px -1px var(--user-text-chat-color); */
+  /* box-shadow: 0 4px 6px -1px var(--user-message-chat-color), 0 2px 4px -1px var(--user-message-chat-color); */
 }
 
 .icons {
@@ -65,6 +47,22 @@
   /* gap-x-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
   justify-content: space-between;
   /* justify-between */
+}
+
+.sidebar-container {
+  width: 20vw;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  /* border-right: 1px solid var(--group-devider-border); */
+  box-shadow: 3px 0 5px -2px var(--group-devider-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  box-shadow: 10px 0 15px -3px var(--emoji-shadow),
+    4px 0 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: var(--background-color);
+  color: #333;
 }
 
 .theme-selection {
@@ -83,7 +81,6 @@
   /*font-size: 1rem; /* text-lg (assuming 1.125rem for text-lg size) */
   padding-top: 0.5rem;
   /* pt-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
-  padding-left: 0.75rem;
   /* pl-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   margin: 0.75rem;
   /* m-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
@@ -117,7 +114,7 @@
 .group {
   display: flex;
   /* flex */
-  color: var(var(--user-text-chat-color));
+  color: var(var(--user-message-chat-color));
   justify-content: space-between;
   /* justify-between */
   padding-right: 1.25rem;
@@ -131,11 +128,10 @@
   width: 100%;
   /*font-size: 1rem; /* Assuming 1rem for text-md (medium text size in Tailwind) */
   /* You can adjust the font-size value based on your specific design requirements */
-}
-
-.group-name {
+  font-size: 18px;
   border-bottom: 1px solid var(--group-devider-border);
 }
+
 
 .chat-title {
   display: flex;
@@ -148,6 +144,11 @@
   /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   align-items: center;
   /* items-center */
+  font-size: 16px;
+}
+
+.pl-3 {
+  font-size: 16px;
 }
 
 /* You can add global styles to this file, and also import other style files */

@@ -3,10 +3,15 @@ import "./MainContent.css";
 import VoiceToText from "../VoicetoText/VoicetoText";
 import ChatMessage from "../ChatMesssage/ChatMessage";
 import axios from "axios";
-
-const MainContent = ({ theme }) => {
+import { BsList } from "react-icons/bs";
+const MainContent = ({
+    theme,
+    messages,
+    setMessages,
+    displaySideBar,
+    setDisplaySidebar,
+}) => {
     const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState([]);
 
     const handleSend = (e) => {
         e.preventDefault();
@@ -38,7 +43,20 @@ const MainContent = ({ theme }) => {
     };
 
     return (
-        <div className={`main-content  ${!theme ? "light" : "dark"}`}>
+        <div
+            style={{ width: displaySideBar ? "80%" : "100%" }}
+            className={`main-content  ${!theme ? "light" : "dark"}`}
+        >
+            {!displaySideBar && (
+                <BsList
+                    size={25}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setDisplaySidebar(!displaySideBar);
+                    }}
+                    style={{ cursor: "pointer" }}
+                />
+            )}
             <header></header>
             {!messages.length && (
                 <div className="writing-options">

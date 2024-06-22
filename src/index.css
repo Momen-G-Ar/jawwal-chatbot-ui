@@ -56,7 +56,7 @@ code {
 
 .light {
   --background-color: #f0f0f0;
-  --primary-text-color: #999;
+  --primary-text-color: #000000;
   /* --primary-text-color: #ffffff; */
   --primary-emoji-color: #555454;
   --emoji-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);

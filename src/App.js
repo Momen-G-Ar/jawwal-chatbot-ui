@@ -2,15 +2,32 @@ import React from "react";
 import "./App.css";
 import Sidebar2 from "./Components/side-bar/SideBar";
 import MainContent from "./Components/MainContent/MainContent";
-import { dark } from "@mui/material/styles/createPalette";
 
 function App() {
     const [darkTheme, setDarkTheme] = React.useState(false);
-    console.log(darkTheme);
+    const [messages, setMessages] = React.useState([]);
+    const [displaySideBar, setDisplaySidebar] = React.useState(true);
+
+    const handleNewChat = () => {};
+
     return (
-        <div className={`App ${dark ? "dark" : "light"}`}>
-            <Sidebar2 theme={darkTheme} setDarkTheme={setDarkTheme} />
-            <MainContent theme={darkTheme} />
+        <div className={`App ${darkTheme ? "dark" : "light"}`}>
+            {displaySideBar && (
+                <Sidebar2
+                    theme={darkTheme}
+                    handleNewChat={handleNewChat}
+                    setDarkTheme={setDarkTheme}
+                    displaySideBar={displaySideBar}
+                    setDisplaySidebar={setDisplaySidebar}
+                />
+            )}
+            <MainContent
+                setDisplaySidebar={setDisplaySidebar}
+                messages={messages}
+                setMessages={setMessages}
+                theme={darkTheme}
+                displaySideBar={displaySideBar}
+            />
         </div>
     );
 }

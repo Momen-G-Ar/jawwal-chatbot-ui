@@ -6,7 +6,7 @@ const SearchBar = ({ onChange, value }) => {
     return (
         <div>
             <div className="search">
-                <div>
+                <div style={{ width: "94%" }}>
                     <input
                         onChange={onChange}
                         value={value}

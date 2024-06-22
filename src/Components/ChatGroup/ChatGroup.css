@@ -25,6 +25,7 @@
     padding-bottom: 0.25rem;
     width: 100%;
     user-select: none;
+    font-size: 18px;
     /*font-size: 1rem; /* Assuming 1rem for text-md (medium text size in Tailwind) */
     /* You can adjust the font-size value based on your specific design requirements */
 }
