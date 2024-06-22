@@ -4,6 +4,7 @@ import VoiceToText from "../VoicetoText/VoicetoText";
 import ChatMessage from "../ChatMesssage/ChatMessage";
 import axios from "axios";
 import { BsList } from "react-icons/bs";
+import CONSTANTS from "./../../constants";
 const MainContent = ({
     theme,
     messages,
@@ -11,23 +12,47 @@ const MainContent = ({
     displaySideBar,
     setDisplaySidebar,
 }) => {
-    const [message, setMessage] = useState("");
-
-    const handleSend = (e) => {
+    const [message, setMessage] = useState({
+        prompt: "",
+        chatId: undefined,
+        sender: undefined,
+        candidates: [],
+    });
+    const [loading, setLoading] = React.useState(false);
+    const handleSend = async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (message.trim() !== "") {
-            setMessages([...messages, { msg: message, type: "sent" }]);
-            setMessage("");
+        setMessages([
+            ...messages,
+            { ...message, sender: "user", candidates: [] },
+        ]);
+        setMessage((old) => ({ ...old, prompt: "", candidates: [] }));
+        try {
+            if (message.prompt.trim() !== "") {
+                setLoading(true);
+                const chatResponse = await sendMessage();
+                console.log({ chatResponse });
+                setMessages((oldState) => [
+                    ...oldState,
+                    {
+                        prompt: chatResponse.text,
+                        sender: "assistant",
+                        chatId: chatResponse.chatId,
+                        candidates: chatResponse.candidates,
+                    },
+                ]);
+            }
+        } catch (error) {
+            console.error(error);
         }
-        setMessage("");
+        setLoading(false);
     };
 
     const handleButtonClick = (e) => {
-        setMessage(e);
+        setMessage((old) => ({ ...old, prompt: e }));
     };
     const handleInput = (e) => {
-        setMessage(e.target.value);
+        setMessage((old) => ({ ...old, prompt: e.target.value }));
     };
 
     const scrollRef = React.useRef(null);
@@ -38,8 +63,12 @@ const MainContent = ({
         }
     }, [messages]);
 
-    const getChat = async () => {
-        const response = await axios.get();
+    const sendMessage = async () => {
+        const response = await axios.post(`${CONSTANTS.baseURL}/api/chat`, {
+            ...message,
+        });
+        console.log(response);
+        return response.data;
     };
 
     return (
@@ -137,20 +166,17 @@ const MainContent = ({
                         return (
                             <>
                                 <ChatMessage
+                                    candidates={msg.candidates}
                                     key={ind + "" + Math.random()}
-                                    sender={"user"}
-                                    text={msg.msg}
-                                />
-
-                                <ChatMessage
-                                    key={ind + "" + Math.random()}
-                                    sender={"assistant"}
-                                    theme="light"
-                                    text={msg.msg}
+                                    sender={msg.sender}
+                                    text={msg.prompt}
                                 />
                             </>
                         );
                     })}
+                    {loading && (
+                        <ChatMessage sender={"assistant"} text={"typing..."} />
+                    )}
                 </div>
                 <div className="message-input">
                     <form
@@ -159,12 +185,16 @@ const MainContent = ({
                     >
                         <input
                             type="text"
-                            value={message}
+                            value={message.prompt}
                             onChange={handleInput}
                             placeholder="Write a question"
                         />
                     </form>
-                    <VoiceToText setMessage={setMessage} />
+                    <VoiceToText
+                        setMessage={(e) =>
+                            setMessage((old) => ({ ...old, prompt: e }))
+                        }
+                    />
                 </div>
             </div>
         </div>

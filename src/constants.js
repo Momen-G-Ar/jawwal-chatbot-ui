@@ -1,3 +1,16 @@
-const baseURL = "http://172.16.2.125:3030";
+const CONSTANTS = {
+    baseURL: "http://172.20.10.2:3030",
 
-export default baseURL;
+    pdfMap: {
+        Esim: "https://drive.google.com/file/d/1eUY8ODJvwYfQ3MlcM6K6W903YVGrEWVo/view",
+        "Internet Packages":
+            "https://drive.google.com/file/d/1oRS67dGoU3y56Iv5OxctNzdIO767MQav/view",
+        "Missed Call Alert":
+            "https://drive.google.com/file/d/1gcTVpxwFcHVf201VRefEjkLlhjsaomuO/view",
+        "Parental Control":
+            "https://drive.google.com/file/d/1e3dDf26o1wk0qhLYQYvyWSpL__4pyg3r/view",
+        "Ranli Service":
+            "https://drive.google.com/file/d/1Ph7eXSE0G9O3auWRCbtyKzA_sGml88SD/view",
+    },
+};
+export default CONSTANTS;

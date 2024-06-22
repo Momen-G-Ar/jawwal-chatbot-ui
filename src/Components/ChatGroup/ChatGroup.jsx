@@ -5,7 +5,7 @@ const ChatGroup = ({ searchTerm, groupName, arr }) => {
     const [showContent, setShowContent] = React.useState(true);
     return (
         <div className="record ">
-            <div className="group ">
+            <div className="group">
                 <span className="group-name">{groupName}</span>
                 <MdOutlineKeyboardArrowDown
                     style={{ cursor: "pointer" }}

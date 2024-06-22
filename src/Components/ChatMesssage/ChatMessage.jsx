@@ -10,10 +10,10 @@ import { IoCopyOutline } from "react-icons/io5";
 import { HiOutlineSpeakerWave } from "react-icons/hi2";
 import { LuExternalLink } from "react-icons/lu";
 import PDFDialog from "../PDFDialog/PDFDialog";
+import CONSTANTS from "../../constants";
 const ChatMessage = (props) => {
     const [show, setShow] = React.useState(false);
     const [liked, setLiked] = React.useState("steady");
-
     const handleLike = () => {
         if (liked === "liked") {
             setLiked("steady");
@@ -49,18 +49,15 @@ const ChatMessage = (props) => {
     const handleClickOpen = () => {
         setShow(true);
     };
-    const handleOpenPdf = () => {
-        window.open(
-            "https://drive.google.com/file/d/1oRS67dGoU3y56Iv5OxctNzdIO767MQav/view",
-            "_blank"
-        );
+    const handleOpenPdf = (pdfName) => {
+        window.open(CONSTANTS.pdfMap[pdfName], "_blank");
     };
     const handleClose = () => {
         setShow(false);
     };
-    const handleOpenPDF = () => {
+    const handleOpenPDF = (pdfName) => {
         setShow(false);
-        handleOpenPdf();
+        handleOpenPdf(pdfName);
     };
     return (
         <div
@@ -71,6 +68,7 @@ const ChatMessage = (props) => {
             className={`chat-message-container ${props.theme}`}
         >
             <PDFDialog
+                candidates={props.candidates}
                 show={show}
                 handleClickOpen={handleClickOpen}
                 handleClose={handleClose}
@@ -116,14 +114,6 @@ const ChatMessage = (props) => {
                     }}
                 >
                     {props.text}&nbsp;
-                    {props.sender === "assistant" && (
-                        <LuExternalLink
-                            color="green"
-                            size={14}
-                            style={{ cursor: "pointer" }}
-                            onClick={handleShowDialog}
-                        />
-                    )}
                 </div>
                 {props.sender === "assistant" && (
                     <div className="emojis-container">
@@ -135,6 +125,7 @@ const ChatMessage = (props) => {
                                 cursor: "pointer",
                             }}
                             size={20}
+                            title="Speak"
                         />
 
                         <IoCopyOutline
@@ -145,6 +136,7 @@ const ChatMessage = (props) => {
                                 cursor: "pointer",
                             }}
                             size={20}
+                            title="Copy"
                         />
                         {liked === "liked" ? (
                             <AiFillLike
@@ -155,6 +147,7 @@ const ChatMessage = (props) => {
                                     cursor: "pointer",
                                 }}
                                 size={20}
+                                title="Like"
                             />
                         ) : (
                             <AiOutlineLike
@@ -165,6 +158,7 @@ const ChatMessage = (props) => {
                                     cursor: "pointer",
                                 }}
                                 size={20}
+                                title="Like"
                             />
                         )}
                         {liked === "disliked" ? (
@@ -176,6 +170,7 @@ const ChatMessage = (props) => {
                                     cursor: "pointer",
                                 }}
                                 size={20}
+                                title="Dislike"
                             />
                         ) : (
                             <AiOutlineDislike
@@ -186,6 +181,37 @@ const ChatMessage = (props) => {
                                     cursor: "pointer",
                                 }}
                                 size={20}
+                                title="Dislike"
+                            />
+                        )}
+                        {props.sender === "assistant" &&
+                        props.text !==
+                            "I'm sorry, I don't have the information you are looking for. Do you want real person support?" ? (
+                            <LuExternalLink
+                                color="green"
+                                className="emoji-itself"
+                                size={20}
+                                style={{
+                                    cursor: "pointer",
+                                }}
+                                onClick={handleShowDialog}
+                                title="Show Relevant Sources"
+                            />
+                        ) : (
+                            <LuExternalLink
+                                color="green"
+                                className="emoji-itself"
+                                size={20}
+                                style={{
+                                    cursor: "pointer",
+                                }}
+                                title="Jawwal Team Support"
+                                onClick={() =>
+                                    window.open(
+                                        "https://jawwalbot.jawwal.ps/Jawwalwebchat",
+                                        "_blank"
+                                    )
+                                }
                             />
                         )}
                     </div>

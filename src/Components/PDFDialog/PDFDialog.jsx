@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-const PDFDialog = ({ show, handleOpenPDF, handleClose }) => {
+const PDFDialog = ({ show, handleOpenPDF, handleClose, candidates }) => {
     return (
         <React.Fragment>
             <Dialog
@@ -18,27 +18,61 @@ const PDFDialog = ({ show, handleOpenPDF, handleClose }) => {
                 <DialogTitle id="alert-dialog-title" sx={{ color: "green" }}>
                     {"Relevant References"}
                 </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means
-                        sending anonymous location data to Google, even when no
-                        apps are running.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button
-                        onClick={handleOpenPDF}
-                        autoFocus
-                        sx={{
-                            color: "white",
-                            backgroundColor: "green",
-                            "&:hover": { backgroundColor: "darkgreen" },
-                            borderRadius: "10px",
-                        }}
-                    >
-                        Open PDF file
-                    </Button>
-                </DialogActions>
+                {(candidates || []).map((candidate) => {
+                    return (
+                        <>
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                    <span
+                                        style={{
+                                            color: "green",
+                                            fontWeight: "900",
+                                        }}
+                                    >
+                                        Q:&nbsp;
+                                    </span>
+                                    {candidate.question}
+                                </DialogContentText>
+                                <DialogContentText id="alert-dialog-description">
+                                    <span
+                                        style={{
+                                            color: "green",
+                                            fontWeight: "900",
+                                        }}
+                                    >
+                                        A:&nbsp;
+                                    </span>
+                                    {candidate.answer
+                                        .split("\n")
+                                        .map((chunk) => {
+                                            return (
+                                                <>
+                                                    <br />
+                                                    {chunk}
+                                                </>
+                                            );
+                                        })}
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button
+                                    onClick={() => handleOpenPDF(candidate.pdf)}
+                                    autoFocus
+                                    sx={{
+                                        color: "white",
+                                        backgroundColor: "green",
+                                        "&:hover": {
+                                            backgroundColor: "darkgreen",
+                                        },
+                                        borderRadius: "10px",
+                                    }}
+                                >
+                                    Open PDF file
+                                </Button>
+                            </DialogActions>
+                        </>
+                    );
+                })}
             </Dialog>
         </React.Fragment>
     );
