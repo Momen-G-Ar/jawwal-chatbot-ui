@@ -1,7 +1,7 @@
 .App {
   display: flex;
   height: 100vh;
-  font-family: monospace;
+  font-family: 'Times New Roman', Times, serif;
   background-color: var(--body-background);
   transition: ease 0.3s;
 }

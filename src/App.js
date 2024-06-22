@@ -10,7 +10,7 @@ function App() {
     return (
         <div className={`App ${dark ? "dark" : "light"}`}>
             <Sidebar2 theme={darkTheme} setDarkTheme={setDarkTheme} />
-            <MainContent />
+            <MainContent theme={darkTheme} />
         </div>
     );
 }

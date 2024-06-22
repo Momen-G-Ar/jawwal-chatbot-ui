@@ -48,7 +48,7 @@ const VoiceToText = ({ setMessage }) => {
         >
             <FaMicrophone
                 size={20}
-                style={{ background: "none" }}
+                style={{ background: "transparent" }}
                 className={isRecording ? "recording-icon" : ""}
             />
         </button>

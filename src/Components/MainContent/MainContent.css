@@ -3,6 +3,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-content-background);
 }
 
 header {
@@ -102,6 +103,8 @@ header {
   /* Gray background */
   justify-content: space-between;
   width: 98%;
+  background: var(--search-background);
+  border: solid 1px var(--group-devider-border);
 }
 
 .chat-container {
@@ -118,6 +121,8 @@ header {
   flex-grow: 1;
   width: 50%;
   overflow: auto;
+  color: var(--input-text-color);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .message-input button {

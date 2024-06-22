@@ -11,7 +11,7 @@ const SearchBar = ({ onChange, value }) => {
                         onChange={onChange}
                         value={value}
                         type="text"
-                        placeholder="Search . . ."
+                        placeholder="Search..."
                         required
                     />
                 </div>

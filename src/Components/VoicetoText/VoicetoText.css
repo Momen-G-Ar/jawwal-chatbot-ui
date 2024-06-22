@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--voice-recorder-color);
+  background-color: var(--body-background);
 }
 
 .microphone-button.recording {

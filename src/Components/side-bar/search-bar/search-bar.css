@@ -1,34 +1,31 @@
 /* @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700"); */
 
-.search > div {
+.search>div {
   padding-left: 1rem;
   margin-bottom: 1rem;
   display: inline-block;
   position: relative;
-  /* filter: drop-shadow(0 1px var(--user-message-chat-color)); */
+  /* filter: drop-shadow(0 1px var(--user-text-chat-color)); */
 }
 
-.search > div > input {
-  color: var(--user-message-chat-color);
-  font-size: 16px;
+.search>div>input {
+  color: var(--input-text-color);
   background: var(--search-background);
+  border: solid 1px var(--group-devider-border);
+  font-size: 16px;
   /* width: 0.75rem; */
   height: 0.75rem;
   padding: 10px;
-  border: solid 1px var(--group-devider-border);
   outline: none;
   border-radius: 35px;
   transition: width 0.5s;
   width: 94%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.search > div > input::placeholder {
-  color: #999;
-  /* opacity: 0; */
-  font-family: monospace;
-  transition: opacity 150ms ease-out;
-}
-
-.search > div > input:focus::placeholder {
+.search>div>input::placeholder {
   opacity: 1;
+  font-family: 'Times New Roman', Times, serif;
+  transition: opacity 150ms ease-out;
+  color: var();
 }

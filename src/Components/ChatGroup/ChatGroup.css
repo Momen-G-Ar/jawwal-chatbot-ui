@@ -12,7 +12,7 @@
 .group {
     display: flex;
     /* flex */
-    color: var(var(--user-message-chat-color));
+    color: var(--user-text-chat-color);
     justify-content: space-between;
     /* justify-between */
     padding-right: 1.25rem;

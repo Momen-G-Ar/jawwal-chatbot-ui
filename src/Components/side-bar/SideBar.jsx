@@ -1,29 +1,12 @@
-// import SearchBar from "./search-bar";
 import { RiChatNewLine } from "react-icons/ri";
 import { BsList } from "react-icons/bs";
-import { MdChatBubbleOutline } from "react-icons/md";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import React, { useEffect, useState } from "react";
 import SearchBar from "./search-bar/search-bar";
-import ThemeFlipper from "./theme-flipper/theme-flipper";
-import { MdLightMode } from "react-icons/md";
-import { MdNightlight } from "react-icons/md";
 import "./themed-side-bar.css";
 import ChatGroup from "../ChatGroup/ChatGroup";
 
 const SideBar2 = ({ theme, setDarkTheme }) => {
     const [displaySideBar, setDisplaySidebar] = useState(true);
-    // cosnt dummyHistory = {
-    //   Today: [
-
-    //   ], Yesterday: [
-
-    //   ], LastWeek: [
-
-    //   ], Previous: [
-
-    //   ]
-    // }
 
     const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {}, [searchTerm]);

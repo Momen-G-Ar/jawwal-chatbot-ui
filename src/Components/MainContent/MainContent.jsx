@@ -1,31 +1,18 @@
-import React, { useState, useRef } from "react";
-import {
-    FaFacebook,
-    FaVideo,
-    FaNewspaper,
-    FaHeartbeat,
-    FaDatabase,
-    FaCode,
-} from "react-icons/fa";
+import React, { useState } from "react";
 import "./MainContent.css";
 import VoiceToText from "../VoicetoText/VoicetoText";
 import ChatMessage from "../ChatMesssage/ChatMessage";
 import axios from "axios";
 
-const MainContent = () => {
+const MainContent = ({ theme }) => {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
-    const [activeButton, setActiveButton] = useState(null);
 
     const handleSend = (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (message.trim() !== "") {
-            setMessages([
-                ...messages,
-                { msg: message, type: "sent" },
-                { msg: "This is a dummy response.", type: "received" },
-            ]);
+            setMessages([...messages, { msg: message, type: "sent" }]);
             setMessage("");
         }
         setMessage("");
@@ -51,7 +38,7 @@ const MainContent = () => {
     };
 
     return (
-        <div className="main-content">
+        <div className={`main-content  ${!theme ? "light" : "dark"}`}>
             <header></header>
             {!messages.length && (
                 <div className="writing-options">
