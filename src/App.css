@@ -1,9 +1,10 @@
 .App {
   display: flex;
   height: 100vh;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--body-background);
   transition: ease 0.3s;
+  overflow: hidden;
 }
 
 input[type=text] {

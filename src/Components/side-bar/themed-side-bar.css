@@ -50,7 +50,8 @@
 }
 
 .sidebar-container {
-  width: 24vw;
+  min-width: 320px;
+  max-width: 320px;
   background-color: var(--background-color);
   color: var(--primary-text-color);
   /* border-right: 1px solid var(--group-devider-border); */
@@ -121,6 +122,8 @@
 
 .history {
   display: flex;
+  overflow: visible;
+  align-items: center;
   /* flex */
   flex-direction: column;
   /* flex-col */
@@ -128,7 +131,6 @@
   padding-top: 0.5rem;
   /* pt-2 (based on Tailwind's spacing scale where 2 is 0.5rem) */
   /* pl-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
-  margin: 0.75rem;
   /* m-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   overflow-y: scroll;
   /* overflow-y-scroll */
@@ -151,7 +153,8 @@
   /* flex */
   flex-direction: column;
   /* flex-col */
-  gap: 0.75rem;
+  gap: 1.20rem;
+  width: 100%;
   /* gap-y-3 (based on Tailwind's spacing scale where 3 is 0.75rem) */
   padding-bottom: 1.25rem;
   /* pb-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
@@ -163,7 +166,6 @@
   color: var(var(--user-message-chat-color));
   justify-content: space-between;
   /* justify-between */
-  padding-right: 1.25rem;
   /* pr-5 (based on Tailwind's spacing scale where 5 is 1.25rem) */
   /* margin-right: 1.5rem; */
 }

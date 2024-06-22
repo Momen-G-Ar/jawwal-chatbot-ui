@@ -6,6 +6,9 @@ import axios from "axios";
 import { BsList } from "react-icons/bs";
 import CONSTANTS from "./../../constants";
 const MainContent = ({
+
+    message,
+    setMessage,
   theme,
   messages,
   setMessages,
@@ -50,7 +53,6 @@ const MainContent = ({
     }
     setLoading(false);
   };
-
   const handleButtonClick = (e) => {
     setMessage((old) => ({ ...old, prompt: e }));
   };
@@ -65,14 +67,15 @@ const MainContent = ({
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
-
-  const sendMessage = async () => {
+    const sendMessage = async () => {
     const response = await axios.post(`${CONSTANTS.baseURL}/api/chat`, {
       ...message,
     });
     console.log(response);
     return response.data;
   };
+
+   
 
   return (
     <div
@@ -84,8 +87,7 @@ const MainContent = ({
         (window.innerWidth < 768 && !displaySideBarForSmallScreen)
           ? "hide"
           : "show"
-      }`}
-    >
+      }`}>
       {!displaySideBar && (
         <BsList
           size={25}
@@ -96,7 +98,7 @@ const MainContent = ({
           style={{ cursor: "pointer" }}
         />
       )}
-      <header></header>
+      
       {!messages.length && (
         <div className="writing-options">
           <img

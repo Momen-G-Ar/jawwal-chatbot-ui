@@ -113,7 +113,15 @@ const ChatMessage = (props) => {
                         }`,
                     }}
                 >
-                    {props.text}&nbsp;
+                    {props.text.split("\n").map((chunk, ind) => {
+                        return (
+                            <>
+                                {ind !== 0 && <br />}
+                                {chunk}
+                            </>
+                        );
+                    })}
+                    &nbsp;
                 </div>
                 {props.sender === "assistant" && (
                     <div className="emojis-container">
@@ -186,7 +194,7 @@ const ChatMessage = (props) => {
                         )}
                         {props.sender === "assistant" &&
                         props.text !==
-                            "I'm sorry, I don't have the information you are looking for. Do you want real person support?" ? (
+                            "I'm sorry, I don't have the information you are looking for. Do you want to contact Jawwal support team? If so, please check the list below." ? (
                             <LuExternalLink
                                 color="green"
                                 className="emoji-itself"

@@ -6,6 +6,10 @@ import "./themed-side-bar.css";
 import ChatGroup from "../ChatGroup/ChatGroup";
 
 const SideBar2 = ({
+    setSearchTerm,
+    searchTerm,
+    groups,
+    handleChangeChatMessages,
   theme,
   setDarkTheme,
   handleNewChat,
@@ -16,16 +20,10 @@ const SideBar2 = ({
   displaySideBarForSmallScreen,
   setDisplaySideBarForSmallScreen,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  // const [smallScreen, setSmallScreen] = useState(false);
-  // const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
-  //   useState(false);
-  useEffect(() => {}, [searchTerm]);
-  const onChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  useEffect(() => {
+    const onChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+   useEffect(() => {
     const handleResize = () => {
       setSmallScreen(window.innerWidth < 768);
       //   setDisplaySidebar(window.innerWidth > 768);
@@ -45,8 +43,8 @@ const SideBar2 = ({
     // };
     // eslint-disable-next-line
   }, [window.innerWidth]);
-  return (
-    <div
+    return (
+        <div
       className={`sidebar-container ${!theme ? "light" : "dark"} ${
         !displaySideBar || (smallScreen && !displaySideBarForSmallScreen)
           ? "hide"
@@ -58,7 +56,7 @@ const SideBar2 = ({
           : {}
       }
     >
-      <div
+             <div
         className="sideHeader "
         style={
           !displaySideBar || (smallScreen && !displaySideBarForSmallScreen)
@@ -66,7 +64,7 @@ const SideBar2 = ({
             : {}
         }
       >
-        <BsList
+                <BsList
           className=""
           size={25}
           // style= {{minWidth: '50px'}}
@@ -79,19 +77,54 @@ const SideBar2 = ({
           }}
           style={{ cursor: "pointer", minWidth: "40px", zIndex: 2 }}
         />
-        <div className="icons">
-          <div className="uael-main-btn" data-switch-type="round_2">
-            <div className="uael-toggle">
-              <input
-                className="uael-switch-round-2 elementor-clickable"
-                type="checkbox"
-                id="toggle_2"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setDarkTheme((old) => !old);
-                }}
-              />
-              <label for="toggle_2" className="elementor-clickable"></label>
+                />
+                <div className="icons">
+                    <div className="uael-main-btn" data-switch-type="round_2">
+                        <div className="uael-toggle">
+                            <input
+                                className="uael-switch-round-2 elementor-clickable"
+                                type="checkbox"
+                                id="toggle_2"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setDarkTheme((old) => !old);
+                                }}
+                            />
+                            <label
+                                for="toggle_2"
+                                className="elementor-clickable"
+                            ></label>
+                        </div>
+                    </div>
+                    <RiChatNewLine
+                        size={22}
+                        style={{
+                            cursor: "pointer",
+                            color: "var(--primary-emoji-color)",
+                        }}
+                        onClick={handleNewChat}
+                    />
+                </div>
+            </div>
+            <div className="side-bar">
+                <div>
+                    <SearchBar onChange={onChange} value={searchTerm} />
+                    <div className="history">
+                        {(groups || []).map((group) => {
+                            console.log({ group });
+                            return (
+                                <ChatGroup
+                                    handleChangeChatMessages={
+                                        handleChangeChatMessages
+                                    }
+                                    searchTerm={searchTerm}
+                                    groupName={group.key}
+                                    items={group.items || []}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
           </div>
           <RiChatNewLine
