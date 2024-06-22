@@ -17,6 +17,9 @@ function App() {
         sender: undefined,
         candidates: [],
     });
+    const [smallScreen, setSmallScreen] = React.useState(false);
+    const [displaySideBarForSmallScreen, setDisplaySideBarForSmallScreen] =
+        React.useState(false);
     const handleNewChat = () => {
         setMessages([]);
         setMessage({
@@ -80,6 +83,10 @@ function App() {
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
                     handleChangeChatMessages={handleChangeChatMessages}
+                    smallScreen={smallScreen}
+                    setSmallScreen={setSmallScreen}
+                    displaySideBarForSmallScreen={displaySideBarForSmallScreen}
+                    setDisplaySideBarForSmallScreen={setDisplaySideBarForSmallScreen}
                 />
             )}
             <MainContent
