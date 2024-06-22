@@ -11,9 +11,11 @@ const SideBar2 = ({
     handleNewChat,
     displaySideBar,
     setDisplaySidebar,
+    setSearchTerm,
+    searchTerm,
+    groups,
+    handleChangeChatMessages,
 }) => {
-    const [searchTerm, setSearchTerm] = useState("");
-    useEffect(() => {}, [searchTerm]);
     const onChange = (e) => {
         setSearchTerm(e.target.value);
     };
@@ -29,7 +31,10 @@ const SideBar2 = ({
                         e.stopPropagation();
                         setDisplaySidebar(!displaySideBar);
                     }}
-                    style={{ cursor: "pointer" }}
+                    style={{
+                        cursor: "pointer",
+                        color: "var(--primary-emoji-color)",
+                    }}
                 />
                 <div className="icons">
                     <div className="uael-main-btn" data-switch-type="round_2">
@@ -51,7 +56,10 @@ const SideBar2 = ({
                     </div>
                     <RiChatNewLine
                         size={22}
-                        style={{ cursor: "pointer" }}
+                        style={{
+                            cursor: "pointer",
+                            color: "var(--primary-emoji-color)",
+                        }}
                         onClick={handleNewChat}
                     />
                 </div>
@@ -60,42 +68,19 @@ const SideBar2 = ({
                 <div>
                     <SearchBar onChange={onChange} value={searchTerm} />
                     <div className="history">
-                        <ChatGroup
-                            searchTerm={searchTerm}
-                            groupName={"Today"}
-                            arr={[
-                                "Today chat 1",
-                                "Today chat 2",
-                                "Today chat 3",
-                            ]}
-                        />
-                        <ChatGroup
-                            searchTerm={searchTerm}
-                            groupName={"Yesterday"}
-                            arr={[
-                                "Yesterday chat 1",
-                                "Yesterday chat 2",
-                                "Yesterday chat 3",
-                            ]}
-                        />
-                        <ChatGroup
-                            searchTerm={searchTerm}
-                            groupName={"Last Week"}
-                            arr={[
-                                "Last Week chat 1",
-                                "Last Week chat 2",
-                                "Last Week chat 3",
-                            ]}
-                        />
-                        <ChatGroup
-                            searchTerm={searchTerm}
-                            groupName={"Previous"}
-                            arr={[
-                                "Previous chat 1",
-                                "Previous chat 2",
-                                "Previous chat 3",
-                            ]}
-                        />
+                        {(groups || []).map((group) => {
+                            console.log({ group });
+                            return (
+                                <ChatGroup
+                                    handleChangeChatMessages={
+                                        handleChangeChatMessages
+                                    }
+                                    searchTerm={searchTerm}
+                                    groupName={group.key}
+                                    items={group.items || []}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
             </div>

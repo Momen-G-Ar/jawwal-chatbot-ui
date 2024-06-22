@@ -44,10 +44,10 @@ const PDFDialog = ({ show, handleOpenPDF, handleClose, candidates }) => {
                                     </span>
                                     {candidate.answer
                                         .split("\n")
-                                        .map((chunk) => {
+                                        .map((chunk, ind) => {
                                             return (
                                                 <>
-                                                    <br />
+                                                    {ind !== 0 && <br />}
                                                     {chunk}
                                                 </>
                                             );

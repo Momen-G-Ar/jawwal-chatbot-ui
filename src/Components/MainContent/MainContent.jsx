@@ -22,30 +22,38 @@ const MainContent = ({
     const handleSend = async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setMessages([
-            ...messages,
-            { ...message, sender: "user", candidates: [] },
-        ]);
-        setMessage((old) => ({ ...old, prompt: "", candidates: [] }));
-        try {
-            if (message.prompt.trim() !== "") {
-                setLoading(true);
-                const chatResponse = await sendMessage();
-                console.log({ chatResponse });
-                setMessages((oldState) => [
-                    ...oldState,
-                    {
-                        prompt: chatResponse.text,
-                        sender: "assistant",
+        if (!loading) {
+            setMessages([
+                ...messages,
+                { ...message, sender: "user", candidates: [] },
+            ]);
+            try {
+                if (message.prompt.trim() !== "") {
+                    setLoading(true);
+                    const chatResponse = await sendMessage();
+                    console.log({ chatResponse });
+
+                    setMessage((old) => ({
+                        ...old,
+                        prompt: "",
+                        candidates: [],
                         chatId: chatResponse.chatId,
-                        candidates: chatResponse.candidates,
-                    },
-                ]);
+                    }));
+                    setMessages((oldState) => [
+                        ...oldState,
+                        {
+                            prompt: chatResponse.text,
+                            sender: "assistant",
+                            chatId: chatResponse.chatId,
+                            candidates: chatResponse.candidates,
+                        },
+                    ]);
+                }
+            } catch (error) {
+                console.error(error);
             }
-        } catch (error) {
-            console.error(error);
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     const handleButtonClick = (e) => {
@@ -64,6 +72,7 @@ const MainContent = ({
     }, [messages]);
 
     const sendMessage = async () => {
+        console.log({ message });
         const response = await axios.post(`${CONSTANTS.baseURL}/api/chat`, {
             ...message,
         });
@@ -77,14 +86,16 @@ const MainContent = ({
             className={`main-content  ${!theme ? "light" : "dark"}`}
         >
             {!displaySideBar && (
-                <BsList
-                    size={25}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        setDisplaySidebar(!displaySideBar);
-                    }}
-                    style={{ cursor: "pointer" }}
-                />
+                <div style={{ display: "flex", width: 20, height: 20 }}>
+                    <BsList
+                        size={25}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setDisplaySidebar(!displaySideBar);
+                        }}
+                        style={{ cursor: "pointer" }}
+                    />
+                </div>
             )}
             <header></header>
             {!messages.length && (
