@@ -11,13 +11,9 @@ const MainContent = ({
     setMessages,
     displaySideBar,
     setDisplaySidebar,
+    message,
+    setMessage,
 }) => {
-    const [message, setMessage] = useState({
-        prompt: "",
-        chatId: undefined,
-        sender: undefined,
-        candidates: [],
-    });
     const [loading, setLoading] = React.useState(false);
     const handleSend = async (e) => {
         e.preventDefault();
@@ -27,6 +23,11 @@ const MainContent = ({
                 ...messages,
                 { ...message, sender: "user", candidates: [] },
             ]);
+            setMessage((old) => ({
+                ...old,
+                prompt: "",
+                candidates: [],
+            }));
             try {
                 if (message.prompt.trim() !== "") {
                     setLoading(true);
@@ -35,8 +36,6 @@ const MainContent = ({
 
                     setMessage((old) => ({
                         ...old,
-                        prompt: "",
-                        candidates: [],
                         chatId: chatResponse.chatId,
                     }));
                     setMessages((oldState) => [

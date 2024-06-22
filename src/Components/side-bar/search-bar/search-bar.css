@@ -19,12 +19,12 @@
   border-radius: 35px;
   transition: width 0.5s;
   width: 94%;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Inter", sans-serif;
 }
 
 .search>div>input::placeholder {
   opacity: 1;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Inter", sans-serif;
   transition: opacity 150ms ease-out;
   color: var();
 }

@@ -11,9 +11,20 @@ function App() {
     const [displaySideBar, setDisplaySidebar] = React.useState(true);
     const [groups, setGroups] = React.useState([]);
     const [searchTerm, setSearchTerm] = React.useState("");
-
+    const [message, setMessage] = React.useState({
+        prompt: "",
+        chatId: undefined,
+        sender: undefined,
+        candidates: [],
+    });
     const handleNewChat = () => {
         setMessages([]);
+        setMessage({
+            prompt: "",
+            chatId: undefined,
+            sender: undefined,
+            candidates: [],
+        });
     };
     const handleChangeChatMessages = async (chatId) => {
         const response = await axios.get(
@@ -77,6 +88,8 @@ function App() {
                 setMessages={setMessages}
                 theme={darkTheme}
                 displaySideBar={displaySideBar}
+                message={message}
+                setMessage={setMessage}
             />
         </div>
     );
